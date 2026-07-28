@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Text To SQL</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🤖 AI Text To SQL Generator</h1>
+        
+
+<button id="darkModeBtn">
+🌙 Dark Mode
+</button>
+
+<p class="subtitle">
+Convert natural language into SQL queries using AI
+</p>
+
+        
+        <div class="input-box">
+
+            <input
+                type="text"
+                id="queryInput"
+                placeholder="Example: Show all artists">
+
+            <button id="askBtn">
+                Generate SQL
+            </button>
+            <button id="clearBtn">
+    🗑️ Clear
+</button>
+
+        </div>
+        <div class="examples">
+
+    <p>💡 Try examples:</p>
+
+    <button class="example-btn">
+        🎵 Show all artists
+    </button>
+
+    <button class="example-btn">
+        💿 Show all albums
+    </button>
+
+    <button class="example-btn">
+        👤 Show all customers
+    </button>
+
+    <button class="example-btn">
+        🎧 Show all tracks
+    </button>
+
+</div>
+
+       <div id="loading" class="loading">
+    🤖 AI is thinking...
+</div>
+
+        <div id="output" class="output">
+
+           <div class="sql-header">
+
+    <h3>📝 Generated SQL</h3>
+
+    <button id="copyBtn">
+        📋 Copy SQL
+    </button>
+
+</div>
+
+<p id="executionTime"></p>
+
+            <pre id="sqlOutput">
+Waiting for query...
+</pre>
+
+            <h3>📊 Database Result</h3>
+
+<p id="recordCount"></p>
+
+<button id="downloadBtn">
+    📥 Download CSV
+</button>
+
+<div id="result">
+Waiting for result...
+</div>
+<div class="history-header">
+
+    <h3>💬 Query History</h3>
+
+    <button id="clearHistoryBtn">
+        🗑️ Clear History
+    </button>
+
+</div>
+
+
+<div id="history">
+No queries yet...
+</div>
+
+        </div>
+
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
