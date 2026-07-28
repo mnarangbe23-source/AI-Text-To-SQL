@@ -87,8 +87,8 @@ async function askAI(){
     try{
 
 
-        const response = await fetch(
-            "http://127.0.0.1:8000/query",
+       const response = await fetch(
+    "http://127.0.0.1:8000/query",
             {
 
                 method:"POST",
@@ -567,19 +567,6 @@ exampleButtons.forEach(button=>{
 
 
 });
-function showToast(message) {
-
-    toast.innerHTML = message;
-
-    toast.classList.add("show");
-
-    setTimeout(() => {
-
-        toast.classList.remove("show");
-
-    }, 2000);
-
-}
 function showToast(message) {
 
     toast.innerHTML = message;
