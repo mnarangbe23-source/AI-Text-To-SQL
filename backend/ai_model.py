@@ -1,4 +1,15 @@
-import ollama
+import os
+from dotenv import load_dotenv
+from groq import Groq
+
+
+load_dotenv()
+
+
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
+)
+
 
 SCHEMA = """
 Database Schema
@@ -42,23 +53,29 @@ Question:
 SQL:
 """
 
-    response = ollama.chat(
-        model="llama3.2:3b",
+
+    response = client.chat.completions.create(
+
+        model="llama-3.3-70b-versatile",
+
         messages=[
             {
                 "role": "user",
                 "content": prompt
             }
         ],
-        options={
-            "temperature": 0
-        }
+
+        temperature=0
+
     )
 
-    sql = response["message"]["content"].strip()
+
+    sql = response.choices[0].message.content.strip()
+
 
     sql = sql.replace("```sql", "")
     sql = sql.replace("```", "")
     sql = sql.strip()
+
 
     return sql
